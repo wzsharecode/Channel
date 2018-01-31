@@ -11,6 +11,12 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
+/**
+ * @author: wangdeshun
+ * @date: 2018/1/31  20:36
+ * @description: 创建 RetrofitService
+ */
+
 public interface RetrofitService {
 
     /**

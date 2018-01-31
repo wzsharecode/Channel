@@ -1,11 +1,7 @@
 package idoool.com.httplib.presenter;
 
-import android.util.Log;
-
 import com.trello.rxlifecycle2.LifecycleProvider;
 import com.trello.rxlifecycle2.android.ActivityEvent;
-
-import idoool.com.baselib.BaseApplication;
 import idoool.com.baselib.bean.BaseJson;
 import idoool.com.baselib.bean.Login;
 import idoool.com.httplib.base.BaseObserver;
@@ -35,7 +31,6 @@ public class LoginPresenter extends BasePresenter implements ILogin.Presenter {
      */
     @Override
     public void login(final String name, final String pwd) {
-        mView.onRequestStart(true);
         RetrofitFactory.getInstance().login(name, pwd)
                 .compose(compose(getProvider().<BaseJson<Login>>bindUntilEvent(ActivityEvent.DESTROY)))
                 .subscribe(new BaseObserver<Login>(true,mView,"login") {

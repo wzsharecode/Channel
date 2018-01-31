@@ -42,7 +42,6 @@ public class RecommendViewHolder extends RecyclerView.ViewHolder {
 
     public void bindView(Activity activity, List<ChannelListType.ListBean> list, int position) {
         //TODO 数据
-//        mTvTitle.setText(list.get(position).getPost().getChannel().getTitle() + "RecommendViewHolder");
         mTvTitle.setText(list.get(position).getContentType() + "RecommendViewHolder");
         GlideUtil.load(BaseApplication.getAppContext(), "http://hzt.idoool.com/upload/small/f1e1543017e150b75b81492373994331.small.jpeg", mIvPlayVideo);
 

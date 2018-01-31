@@ -103,52 +103,6 @@ public abstract class BasePresenter<T> {
             }
         }
         getRequest.tag(mTag);
-//        getRequest.execute(new StringCallback() {
-//            @Override
-//            public void onSuccess(Response<String> response) {
-//                String body = response.body();
-//                if (!TextUtils.isEmpty(body)) {
-//                    BaseJson commonResponse = mGson.fromJson(body, BaseJson.class);
-//                    if ("1".equals(commonResponse.status)) {
-////                        onRequestSuccess(response, requestCode);
-//                    } else {
-//                        mResult.onRequestFailed(requestCode, commonResponse.getMsg());
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onStart(Request request) {
-//                mResult.onRequestStart(isShowDialog);
-//            }
-//
-//            @Override
-//            public void onCacheSuccess(Response<String> response) {
-////                onRequestCacheSuccess((T) response.body(), requestCode);
-//            }
-//
-//            @Override
-//            public void onError(Response response) {
-//                mResult.onError(requestCode, response);
-//            }
-//
-//            @Override
-//            public void onFinish() {
-//                mResult.onFinish();
-//            }
-//
-//            @Override
-//            public void uploadProgress(Progress progress) {
-//                mResult.uploadProgress(progress);
-//            }
-//
-//            @Override
-//            public void downloadProgress(Progress progress) {
-//                mResult.downloadProgress(progress);
-//            }
-//
-//
-//        });
         return getRequest;
     }
 

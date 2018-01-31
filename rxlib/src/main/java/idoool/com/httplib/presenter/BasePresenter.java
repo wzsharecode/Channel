@@ -1,20 +1,18 @@
 package idoool.com.httplib.presenter;
 
-import android.widget.Toast;
-
 import com.trello.rxlifecycle2.LifecycleProvider;
 import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.trello.rxlifecycle2.android.ActivityEvent;
 
 import idoool.com.baselib.BaseApplication;
 import idoool.com.baselib.utils.NetWorkUtil;
-import idoool.com.httplib.R;
 import idoool.com.httplib.base.IBaseView;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.ObservableTransformer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
@@ -55,12 +53,17 @@ public abstract class BasePresenter {
                                 // 可添加网络连接判断等
                                 if (!NetWorkUtil.isNetworkConnected(BaseApplication.getAppContext())) {
                                     mView.onNoConnect();
-                                    mView.onFinish();
                                 }
                             }
                         })
                         .observeOn(AndroidSchedulers.mainThread())
-                        .compose(lifecycle);
+                        .compose(lifecycle)
+                        .doFinally(new Action() {
+                            @Override
+                            public void run() throws Exception {
+                                mView.onFinish();
+                            }
+                        });
             }
         };
     }

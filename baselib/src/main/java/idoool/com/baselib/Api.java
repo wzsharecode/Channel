@@ -17,7 +17,6 @@ public interface Api {
      * MainUrl
      */
     String MAIN_URL = "http://hzt.idoool.com/";
-//    String MAIN_URL = "http://192.168.1.20:8089/";
     /**
      * 登录
      */
