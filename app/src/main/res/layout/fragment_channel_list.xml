@@ -1,0 +1,34 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="false"
+        android:background="#DDD"
+        android:focusableInTouchMode="false"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/prb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="@dimen/x50"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_no_data"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/x100"
+        android:layout_marginTop="@dimen/x100"
+        android:scaleType="fitXY"
+        android:src="@mipmap/no_more_data_icon"
+        android:visibility="gone" />
+
+</FrameLayout>

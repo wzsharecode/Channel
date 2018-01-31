@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <TextView
+        android:id="@+id/tv_d"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x100"
+        android:layout_alignParentBottom="true"
+        android:background="#0288ff"
+        android:gravity="center"
+        android:text="订阅"
+        android:textColor="@color/white" />
+
+    <idoool.com.channel.widget.ObservableScrollView
+        android:id="@+id/sc_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/tv_d"
+        android:background="@color/white"
+        android:fillViewport="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/fl_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x400">
+
+                    <ImageView
+                        android:id="@+id/iv_tpo_pic"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        tools:ignore="ContentDescription" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_subscribe_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="@dimen/x20"
+                    android:textSize="@dimen/x22" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="@dimen/x60"
+                    android:ellipsize="end"
+                    android:gravity="bottom"
+                    android:lineSpacingExtra="@dimen/x5"
+                    android:maxLines="2"
+                    android:paddingLeft="@dimen/x20"
+                    android:paddingRight="@dimen/x20" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFF"
+                android:ellipsize="end"
+                android:lineSpacingExtra="@dimen/x5"
+                android:maxLines="3"
+                android:padding="@dimen/x20"
+                android:textSize="@dimen/x26" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#DDD" />
+
+            <idoool.com.channel.widget.NavigationTabStrip
+                android:id="@+id/nts"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x90"
+                android:background="#FFF"
+                app:nts_active_color="#0288ff"
+                app:nts_animation_duration="200"
+                app:nts_color="#0288ff"
+                app:nts_corners_radius="5dp"
+                app:nts_factor="2.5"
+                app:nts_gravity="bottom"
+                app:nts_inactive_color="#000"
+                app:nts_size="15sp"
+                app:nts_titles="@array/titles"
+                app:nts_type="line"
+                app:nts_weight="2dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="2dp"
+                android:background="#DDD" />
+
+            <idoool.com.channel.widget.ViewPagerForScrollView
+                android:id="@+id/vp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFF" />
+
+            <ProgressBar
+                android:id="@+id/prb_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/x20"
+                android:layout_marginTop="@dimen/x20"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </idoool.com.channel.widget.ObservableScrollView>
+
+    <FrameLayout
+        android:id="@+id/fl_head"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x140"
+        android:layout_alignParentTop="true"
+        android:background="#0000">
+
+        <ProgressBar
+            android:id="@+id/prb_progressbar"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/x60"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginTop="@dimen/x50"
+            android:padding="@dimen/x10"
+            android:src="@mipmap/back_white_icon"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/ll_head"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:background="#0288ff"
+            android:paddingTop="@dimen/x44">
+
+            <TextView
+                android:id="@+id/tv_head"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#0288ff"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/x70"
+            android:layout_height="@dimen/x70"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginTop="@dimen/x60"
+            android:padding="@dimen/x10"
+            android:src="@mipmap/back_white_icon" />
+
+        <ImageView
+            android:id="@+id/iv_right_share"
+            android:layout_width="@dimen/x70"
+            android:layout_height="@dimen/x70"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/x80"
+            android:layout_marginTop="@dimen/x60"
+            android:padding="@dimen/x10"
+            android:src="@mipmap/channel_details_icon_nor" />
+
+        <ImageView
+            android:id="@+id/iv_right_pic"
+            android:layout_width="@dimen/x70"
+            android:layout_height="@dimen/x70"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/x10"
+            android:layout_marginTop="@dimen/x60"
+            android:padding="@dimen/x10"
+            android:src="@mipmap/channel_details_icon_nor" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_visible_nts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fl_head"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <idoool.com.channel.widget.NavigationTabStrip
+            android:id="@+id/visible_nts"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x90"
+            android:background="#FFF"
+            app:nts_active_color="#0288ff"
+            app:nts_animation_duration="200"
+            app:nts_color="#0288ff"
+            app:nts_corners_radius="5dp"
+            app:nts_factor="2.5"
+            app:nts_gravity="bottom"
+            app:nts_inactive_color="#000"
+            app:nts_size="15sp"
+            app:nts_titles="@array/titles"
+            app:nts_type="line"
+            app:nts_weight="2dp" />
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="2dp"
+            android:background="#DDD" />
+
+    </LinearLayout>
+
+</RelativeLayout>

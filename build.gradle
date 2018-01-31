@@ -1,0 +1,52 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "config.gradle"
+buildscript {
+    ext.anko_version = '0.10.1'
+    ext.junit_version = '4.12'
+    ext.runner_version = '1.0.1'
+    ext.espresso_core_version = '3.0.1'
+
+    ext.v4_version = '26.1.0'
+    ext.v7_version = '26.1.0'
+    ext.recyclerview_v7_version = '26.1.0'
+    ext.constrain_layout_version = '1.0.2'
+
+    ext.multidex_version = '1.0.2'
+    ext.butterknife_version = '5.1.1'
+    ext.glide_version = '3.7.0'
+    ext.glide_version = '3.7.0'
+    ext.butterknife_version = '5.1.1'
+    ext.slidableactivity_version = "2.0.6"
+    ext.gson_version = '2.2.4'
+
+    ext.retrofit_version = '2.0.2'
+    ext.rxandroid_version = '1.2.1'
+    ext.logging_interceptor_version = '3.0.1'
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+
+        //Gradle Android Maven plugin
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
+        //Gradle Bintray Plugin
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

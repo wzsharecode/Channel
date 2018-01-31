@@ -1,0 +1,76 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- 字体大小 -->
+    <dimen name="tiny_text_size">10sp</dimen>
+    <dimen name="micro_text_size">13sp</dimen>
+    <dimen name="micro_middle_text_size">13sp</dimen>
+    <dimen name="small_text_size">14sp</dimen>
+    <dimen name="small_medium_text_size">17sp</dimen>
+    <dimen name="small_middle_text_size">16sp</dimen>
+    <dimen name="medium_text_size">17sp</dimen>
+    <dimen name="large_medium_text_size">18sp</dimen>
+    <dimen name="large_middle_text_size">19sp</dimen>
+    <dimen name="large_text_size">20sp</dimen>
+    <dimen name="super_text_size">24sp</dimen>
+    <dimen name="super_large_text_size">28sp</dimen>
+    <!-- 字体大小 -->
+
+
+    <!-- 首页Gallery高度 -->
+    <dimen name="index_gallery_height">120dp</dimen>
+    <!-- 首页Gallery高度 -->
+
+    <!-- 标题栏高度 -->
+    <dimen name="topbar_height">48dp</dimen>
+    <dimen name="bottombar_height">50dp</dimen>
+
+    <!-- 列表菜单项高度 -->
+    <dimen name="item_height_large">60dp</dimen>
+    <dimen name="item_height">50dp</dimen>
+    <dimen name="item_height_middle">48dp</dimen>
+
+    <!-- 菜单项间隔 -->
+    <dimen name="item_margin_top">20dp</dimen>
+    <dimen name="item_margin_left">12dp</dimen>
+    <dimen name="item_margin_right">12dp</dimen>
+    <dimen name="item_margin_bottom">12dp</dimen>
+
+    <!-- 分隔条高度 -->
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_height_middle">0.5dp</dimen>
+
+    <!-- 间隔 -->
+    <dimen name="item_margin">15dp</dimen>
+    <dimen name="item_margin_large">18dp</dimen>
+
+    <!-- 首页divider间隔 -->
+    <dimen name="home_item_margin">10dp</dimen>
+
+    <!--一键置顶按钮的宽和高-->
+    <dimen name="imgtop_height_width">40dp</dimen>
+
+    <dimen name="home_cradview">0px</dimen>
+    <dimen name="fragment_category_select">114px</dimen>
+    <dimen name="fragment_category_country">25px</dimen>
+    <dimen name="home_lv_shadow_margintop">@dimen/x409</dimen>
+    <dimen name="home_lv_shadow_height">@dimen/x165</dimen>
+    <dimen name="home_lv_shadow_margin">@dimen/x7</dimen>
+    <dimen name="home_gny_margin">@dimen/x50</dimen>
+    <dimen name="home_test_viewShadow_width">@dimen/x320</dimen>
+    <dimen name="hometest_img_margin_left_left">@dimen/x25</dimen>
+    <dimen name="hometest_img_margin_left_right">@dimen/x15</dimen>
+    <dimen name="hometest_img_margin_right_left">@dimen/x15</dimen>
+    <dimen name="hometest_img_margin_right_right">@dimen/x25</dimen>
+    <dimen name="rili_group_middlebar">@dimen/x82</dimen>
+    <dimen name="activity_group_num_middle_height">@dimen/x95</dimen>
+    <dimen name="titleViewHeight1_top">78px</dimen>
+    <dimen name="titleViewHeight2_top">110px</dimen>
+    <dimen name="titleViewHeight3_top">164px</dimen>
+    <dimen name="titleViewHeight4_top">210px</dimen>
+    <dimen name="titleViewHeight5_top">100px</dimen>
+    <dimen name="refunddetails">@dimen/x80</dimen>
+</resources>

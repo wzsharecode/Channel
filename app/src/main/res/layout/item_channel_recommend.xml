@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/x10"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/x30">
+    <!--2：推荐频道-->
+
+    <include layout="@layout/item_common_top" />
+
+    <TextView
+        android:id="@+id/tv_intro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="好久不见会动的涛哥，这个表情这个动作实在是太可爱了，哈哈哈期待黄子韬的新作品。" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/x10"
+        android:layout_marginTop="@dimen/x10">
+
+        <ImageView
+            android:id="@+id/iv_play_video"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x350"
+            android:layout_gravity="center"
+            android:background="#EEE"
+            android:clickable="true"
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:layout_width="@dimen/x70"
+            android:layout_height="@dimen/x70"
+            android:layout_gravity="center"
+            android:src="@mipmap/video_icon" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="@dimen/x400"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/x25"
+            android:ellipsize="end"
+            android:gravity="bottom"
+            android:lineSpacingExtra="@dimen/x5"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/x20"
+            android:text="我是标题标题标题标题标题标题标题标题标题标题标题标题标题标题" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="@dimen/x25"
+            android:paddingRight="@dimen/x20"
+            android:text="00:00" />
+
+    </FrameLayout>
+
+    <include layout="@layout/item_common_bottom" />
+</LinearLayout>

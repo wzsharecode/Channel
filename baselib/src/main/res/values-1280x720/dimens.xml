@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="refunddetails">@dimen/x80</dimen>
+    <dimen name="bookbtnLeft">0dp</dimen>
+    <dimen name="ticket_header_collect_width">@dimen/x72</dimen>
+</resources>

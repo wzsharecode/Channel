@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="refunddetails">@dimen/x80</dimen>
+    <dimen name="titleViewHeight6_EntranceTicket">126px</dimen>
+</resources>

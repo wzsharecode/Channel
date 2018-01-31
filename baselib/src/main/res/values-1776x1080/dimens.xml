@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<dimen name="fragment_category_select">114px</dimen>-->
+    <dimen name="fragment_category_country">23.5px</dimen>
+    <dimen name="home_lv_shadow_margintop">@dimen/x365</dimen>
+    <dimen name="home_lv_shadow_height">@dimen/x165</dimen>
+    <dimen name="home_lv_shadow_margin">@dimen/x9</dimen>
+    <dimen name="home_gny_margin">@dimen/x48</dimen>
+    <dimen name="home_test_viewShadow_width">@dimen/x327</dimen>
+    <dimen name="hometest_img_margin_left_left">@dimen/x20</dimen>
+    <dimen name="hometest_img_margin_left_right">@dimen/x10</dimen>
+    <dimen name="hometest_img_margin_right_left">@dimen/x10</dimen>
+    <dimen name="hometest_img_margin_right_right">@dimen/x20</dimen>
+    <dimen name="hometest_main_height">@dimen/x368</dimen>
+    <dimen name="rili_adult_child_left">@dimen/x16</dimen>
+    <dimen name="rili_group_middlebar_left">@dimen/x16</dimen>
+    <dimen name="rili_im_left_date">0px</dimen>
+    <dimen name="titleViewHeight1_top">118px</dimen>
+    <dimen name="titleViewHeight2_top">166px</dimen>
+    <dimen name="titleViewHeight3_top">242px</dimen>
+    <dimen name="titleViewHeight4_top">315px</dimen>
+    <dimen name="titleViewHeight5_top">140px</dimen>
+    <dimen name="titleViewHeight1_EntranceTicket">130px</dimen>
+    <dimen name="titleViewHeight2_EntranceTicket">157px</dimen>
+    <dimen name="titleViewHeight3_EntranceTicket">315px</dimen>
+    <dimen name="titleViewHeight4_EntranceTicket">315px</dimen>
+    <dimen name="titleViewHeight6_EntranceTicket">126px</dimen>
+    <dimen name="titleViewHeight2_EntranceTicket_2">315px</dimen>
+    <dimen name="feelineTop">30px</dimen>
+    <dimen name="refunddetails">80px</dimen>
+    <dimen name="group_tag">@dimen/x86</dimen>
+</resources>

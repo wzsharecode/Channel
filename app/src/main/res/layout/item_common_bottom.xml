@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:layout_width="@dimen/x40"
+        android:layout_height="@dimen/x40"
+        android:src="@mipmap/fabulous_nor_icon" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="@dimen/x10"
+        android:text="12"
+        android:textSize="@dimen/x24" />
+
+    <ImageView
+        android:layout_width="@dimen/x40"
+        android:layout_height="@dimen/x40"
+        android:src="@mipmap/fabulous_pre_icon"
+        android:visibility="visible" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/x10"
+        android:text="6"
+        android:textSize="@dimen/x24"
+        android:visibility="visible" />
+
+    <ImageView
+        android:layout_width="@dimen/x40"
+        android:layout_height="@dimen/x40"
+        android:src="@mipmap/share_icon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/x10"
+        android:text="@string/share"
+        android:textSize="@dimen/x24" />
+
+</LinearLayout>

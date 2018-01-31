@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+
+
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //添加如下配置就OK了
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':baselib')
+    implementation "com.jakewharton:butterknife:$butterknife_version"
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    compile "io.reactivex.rxjava2:rxjava:2.1.1"
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+
+    compile 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+    // RxLifecycle
+    compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+
+//    /*//RxCache
+//    compile 'com.github.VictorAlbertos.RxCache:runtime:1.8.0-2.x'
+//    compile 'com.github.VictorAlbertos.Jolyglot:gson:0.0.3'
+
+}
