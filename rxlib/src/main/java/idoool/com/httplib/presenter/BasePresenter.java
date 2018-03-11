@@ -5,6 +5,7 @@ import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.trello.rxlifecycle2.android.ActivityEvent;
 
 import idoool.com.baselib.BaseApplication;
+import idoool.com.baselib.bean.BaseJson;
 import idoool.com.baselib.utils.NetWorkUtil;
 import idoool.com.httplib.base.IBaseView;
 import io.reactivex.Observable;
@@ -23,7 +24,7 @@ import io.reactivex.schedulers.Schedulers;
  * o(＞﹏＜)o
  */
 
-public abstract class BasePresenter {
+public abstract class BasePresenter<T> {
     protected IBaseView mView;
 
     private LifecycleProvider<ActivityEvent> provider;
@@ -34,38 +35,23 @@ public abstract class BasePresenter {
 
     }
 
-    public LifecycleProvider<ActivityEvent> getProvider() {
-        return provider;
-    }
-
     /**
-     * 线程调度
+     * 订阅
+     * @param observable
+     * @return
      */
-    protected <T> ObservableTransformer<T, T> compose(final LifecycleTransformer<T> lifecycle) {
-        return new ObservableTransformer<T, T>() {
-            @Override
-            public ObservableSource<T> apply(Observable<T> observable) {
-                return observable
-                        .subscribeOn(Schedulers.io())
-                        .doOnSubscribe(new Consumer<Disposable>() {
-                            @Override
-                            public void accept(Disposable disposable) throws Exception {
-                                // 可添加网络连接判断等
-                                if (!NetWorkUtil.isNetworkConnected(BaseApplication.getAppContext())) {
-                                    mView.onNoConnect();
-                                }
-                            }
-                        })
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .compose(lifecycle)
-                        .doFinally(new Action() {
-                            @Override
-                            public void run() throws Exception {
-                                mView.onFinish();
-                            }
-                        });
-            }
-        };
+    protected Observable<BaseJson<T>> addSubscribe(Observable<BaseJson<T>> observable) {
+        observable.subscribeOn(Schedulers.io())
+                .doOnSubscribe(disposable -> {
+                    // 可添加网络连接判断等
+                    if (!NetWorkUtil.isNetworkConnected(BaseApplication.getAppContext())) {
+                        mView.onNoConnect();
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .compose(provider.bindUntilEvent(ActivityEvent.DESTROY))
+                .doFinally(() -> mView.onFinish());
+        return observable;
     }
 
 }

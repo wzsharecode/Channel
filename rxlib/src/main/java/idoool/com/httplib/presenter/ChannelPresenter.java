@@ -25,8 +25,7 @@ public class ChannelPresenter extends BasePresenter implements IChannel.Presente
 
     @Override
     public void getAllChannel() {
-        RetrofitFactory.getInstance().getAllChannel()
-                .compose(compose(getProvider().<BaseJson<ChannelList>>bindUntilEvent(ActivityEvent.DESTROY)))
+        addSubscribe(RetrofitFactory.getInstance().getAllChannel())
                 .subscribe(new BaseObserver<ChannelList>(true, mView, "getAllChannel") {
                     @Override
                     protected void onHandleSuccess(ChannelList bean) {

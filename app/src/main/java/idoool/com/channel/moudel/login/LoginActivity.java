@@ -44,7 +44,7 @@ public class LoginActivity extends BaseActivity<ILogin.Presenter> implements ILo
     @Override
     public void onNoConnect() {
         super.onNoConnect();
-        toActivity();
+//        toActivity();
     }
 
     /**
