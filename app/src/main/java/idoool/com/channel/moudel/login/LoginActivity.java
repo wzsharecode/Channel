@@ -30,12 +30,7 @@ public class LoginActivity extends BaseActivity<ILogin.Presenter> implements ILo
 
     @Override
     protected void initView() {
-        mBtnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mPresenter.login("13717846897", "e10adc3949ba59abbe56e057f20f883e");
-            }
-        });
+        mBtnLogin.setOnClickListener(v -> mPresenter.login("13717846897", "e10adc3949ba59abbe56e057f20f883e"));
     }
 
     /**

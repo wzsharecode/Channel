@@ -4,6 +4,12 @@ import idoool.com.baselib.bean.BaseJson;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
+/**
+ * @author: WangDeShun
+ * @date: 2018/3/22  10:33
+ * @description: 创建 BaseObserver
+ */
+
 public abstract class BaseObserver<T> implements Observer<BaseJson<T>> {
 
     private IBaseView mView;

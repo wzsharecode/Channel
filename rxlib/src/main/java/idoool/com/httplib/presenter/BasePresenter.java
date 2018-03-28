@@ -54,4 +54,24 @@ public abstract class BasePresenter<T> {
         return observable;
     }
 
+    /**
+     * 无参数
+     *
+     * @param <T> 泛型
+     * @return 返回Observable
+     */
+    protected <T> ObservableTransformer<T, T> switchSchedulers(IBaseView mView) {
+        return upstream -> upstream
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .doOnSubscribe(disposable -> {
+                    // 可添加网络连接判断等
+                    if (!NetWorkUtil.isNetworkConnected(BaseApplication.getAppContext())) {
+                        mView.onNoConnect();
+                    }
+                })
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doFinally(() -> mView.onFinish());
+    }
 }
