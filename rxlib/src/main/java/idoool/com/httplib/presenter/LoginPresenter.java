@@ -31,7 +31,7 @@ public class LoginPresenter extends BasePresenter implements ILogin.Presenter {
      */
     @Override
     public void login(final String name, final String pwd) {
-        addSubscribe(RetrofitFactory.getInstance().login(name, pwd)).compose(switchSchedulers(mView)).subscribe(new BaseObserver<Login>(true,mView,"login") {
+        RetrofitFactory.getInstance().login(name, pwd).compose(switchSchedulers(mView)).subscribe(new BaseObserver<Login>(true,mView,"login") {
                     @Override
                     protected void onHandleSuccess(Login user) {
                         mView.loginSuccess(user);

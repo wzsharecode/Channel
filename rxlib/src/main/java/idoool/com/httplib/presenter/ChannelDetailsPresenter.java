@@ -32,7 +32,7 @@ public class ChannelDetailsPresenter extends BasePresenter implements IChannelDe
      */
     @Override
     public void channelDetailById(String channel, String channelId) {
-        addSubscribe(RetrofitFactory.getInstance().channelDetailById(channel, channelId))
+        RetrofitFactory.getInstance().channelDetailById(channel, channelId).compose(switchSchedulers(mView))
                 .subscribe(new BaseObserver<ChannelDetails>(true, mView, "channelDetailById") {
                     @Override
                     protected void onHandleSuccess(ChannelDetails bean) {
@@ -56,7 +56,7 @@ public class ChannelDetailsPresenter extends BasePresenter implements IChannelDe
      */
     @Override
     public void postsByChannelId(String channel, String channelId, int queryType, int limit, int offset) {
-        addSubscribe(RetrofitFactory.getInstance().postsByChannelId(channel, channelId, queryType, limit))
+        RetrofitFactory.getInstance().postsByChannelId(channel, channelId, queryType, limit).compose(switchSchedulers(mView))
                 .subscribe(new BaseObserver<ChannelListType>(true, mView, "postsByChannelId") {
                     @Override
                     protected void onHandleSuccess(ChannelListType bean) {

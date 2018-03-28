@@ -36,25 +36,6 @@ public abstract class BasePresenter<T> {
     }
 
     /**
-     * 订阅
-     * @param observable
-     * @return
-     */
-    protected Observable<BaseJson<T>> addSubscribe(Observable<BaseJson<T>> observable) {
-        observable.subscribeOn(Schedulers.io())
-                .doOnSubscribe(disposable -> {
-                    // 可添加网络连接判断等
-                    if (!NetWorkUtil.isNetworkConnected(BaseApplication.getAppContext())) {
-                        mView.onNoConnect();
-                    }
-                })
-                .observeOn(AndroidSchedulers.mainThread())
-                .compose(provider.bindUntilEvent(ActivityEvent.DESTROY))
-                .doFinally(() -> mView.onFinish());
-        return observable;
-    }
-
-    /**
      * 无参数
      *
      * @param <T> 泛型
